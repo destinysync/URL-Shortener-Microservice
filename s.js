@@ -1,12 +1,10 @@
 var express = require('express');
 var app = express();
 
-app.use('/public', express.static(process.cwd() + '/public'));
-
 var port = process.env.PORT || 8080;
 var mongo = require('mongodb').MongoClient;
 var originalURL = '';
-var prefix = "https://url-shortener-service-destinysync.c9users.io/";
+var prefix = "https://short-uri.herokuapp.com/";
 var resultJSON = {};
 
 function getResultJSON(originalURL, shortenedURL) {
