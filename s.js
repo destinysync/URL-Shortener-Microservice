@@ -6,6 +6,7 @@ var mongo = require('mongodb').MongoClient;
 var originalURL = '';
 var prefix = "https://short-uri.herokuapp.com/";
 var resultJSON = {};
+var mongoURI = 'mongodb://<dbuser>:<dbpassword>@ds015720.mlab.com:15720/heroku_8mmg8q9c';
 
 function getResultJSON(originalURL, shortenedURL) {
     var json = {
@@ -17,7 +18,7 @@ function getResultJSON(originalURL, shortenedURL) {
 
 function dbInsert(callback) {
     var numberCount = 1000;
-    mongo.connect('mongodb://localhost:27017/clementinejs', function(err, db) {
+    mongo.connect(mongoURI, function(err, db) {
         var collection = db.collection('urlPairs');
         var docToInsert = {
             originalURL: originalURL,
@@ -50,7 +51,7 @@ function dbInsert(callback) {
 }
 
 function findOriginalURL(callback) {
-    mongo.connect('mongodb://localhost:27017/clementinejs', function(err, db) {
+    mongo.connect(mongoURI, function(err, db) {
         if (err) {
             throw new Error('Database failed to connect!');
         } else {
