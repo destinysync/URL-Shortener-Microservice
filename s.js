@@ -86,7 +86,7 @@ var obj = {};
 app.get('/url/*', function(req, res) {
     originalURL = req.params[0];
     obj = res;
-    if (originalURL.match(/^http:\/\/www\..+\.com$/i) == null) {
+    if (originalURL.match(/^https?:\/\/www\..+\.com\/?$/i) == null) {
     	res.json({
         original_url: originalURL,
         short_url: 'Please Provide A URL With The Same Format As http://www.example.com'
