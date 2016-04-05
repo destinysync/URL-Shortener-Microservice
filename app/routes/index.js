@@ -17,7 +17,7 @@ module.exports = function (app, passport) {
 
 	app.route('/')
 		.get(isLoggedIn, function (req, res) {
-			res.sendFile(path + '/public/index.html');
+			res.sendFile(path + '/public/index2.html');
 		});
 
 	app.route('/login')
