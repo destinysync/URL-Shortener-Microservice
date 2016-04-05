@@ -5,6 +5,7 @@ var port = process.env.PORT || 8080;
 var mongo = require('mongodb').MongoClient;
 var originalURL = '';
 var prefix = "https://short-uri.herokuapp.com/";
+// var prefix = "https://url-shortener-service-destinysync.c9users.io/";
 var resultJSON = {};
 var mongoURI = 'mongodb://admin:admin2020@ds015720.mlab.com:15720/heroku_8mmg8q9c';
 
@@ -20,6 +21,7 @@ function dbInsert(callback) {
     var numberCount = 1000;
     mongo.connect(mongoURI, function(err, db) {
         var collection = db.collection('urlPairs');
+        // collection.insert({_id: 'numCount', numCount: 1000});
         var docToInsert = {
             originalURL: originalURL,
             shortenedURL: ''
