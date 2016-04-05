@@ -6,7 +6,7 @@ var mongo = require('mongodb').MongoClient;
 var originalURL = '';
 var prefix = "https://short-uri.herokuapp.com/";
 var resultJSON = {};
-var mongoURI = 'mongodb://<dbuser>:<dbpassword>@ds015720.mlab.com:15720/heroku_8mmg8q9c';
+var mongoURI = 'mongodb://admin:admin2020@ds015720.mlab.com:15720/heroku_8mmg8q9c';
 
 function getResultJSON(originalURL, shortenedURL) {
     var json = {
