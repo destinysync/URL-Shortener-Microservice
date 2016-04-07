@@ -20,7 +20,6 @@ function dbInsert(callback) {
     var numberCount = 1000;
     mongo.connect(mongoURI, function(err, db) {
         var collection = db.collection('urlPairs');
-        // collection.insert({_id: 'numCount', numCount: 1000});
         var docToInsert = {
             originalURL: originalURL,
             shortenedURL: ''
